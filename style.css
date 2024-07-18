@@ -1,0 +1,557 @@
+/* General reset and styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+}
+
+.header {
+    background-color: #f9f9f9; /* 上部バーの背景色を白に変更 */
+    color: #333; /* テキストの色をダークグレーに変更 */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    align-items: center;
+}
+
+.header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.header nav ul li {
+    margin: 0 15px;
+}
+
+.header nav ul li a {
+    color: #333; /* ナビゲーションリンクの文字色をダークグレーに変更 */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: #ff9800;
+}
+
+.main-content {
+    padding-top: 80px; /* Adjust for fixed header */
+}
+
+.footer {
+    background-color: #fff; /* 下部バーの背景色を白に変更 */
+    color: #333; /* テキストの色をダークグレーに変更 */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.section {
+    padding: 60px 0;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+}
+
+.section p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+.membership ul, .events .event-item, .content .content-item, .contact-form, .newsletter-form {
+    list-style: none;
+    padding: 0;
+}
+
+.membership ul li, .events .event-item, .content .content-item {
+    margin-bottom: 20px;
+}
+
+.membership ul ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.membership ul ul li {
+    margin-bottom: 10px;
+}
+
+.membership ul ul li, .events .event-item p, .content .content-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.events .event-item, .content .content-item {
+    padding: 20px;
+    background-color: #e9e9e9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.events .event-item h3, .content .content-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.events .event-item a, .content .content-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.events .event-item a:hover, .content .content-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-form, .newsletter-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group, .newsletter-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label, .newsletter-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form .form-group input, .contact-form .form-group textarea, .newsletter-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form .form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button, .newsletter-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9800;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover, .newsletter-form button:hover {
+    background-color: #e68900;
+}
+
+/* Additional styling for other sections */
+
+/* Introduction Section */
+.introduction {
+    padding: 200px 0;
+    background-color: #f9f9f9;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.introduction .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.introduction .container p {
+    margin-top: 12px;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    background-color: #e2e2e2;
+}
+
+.profile img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    flex: 1;
+    text-align: left;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.social-links .btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.social-links .btn:hover {
+    background-color: #666;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services .service-item {
+    margin-bottom: 40px;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 80px 0;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 300px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gallery {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px; /* アイテム間のスペースを調整 */
+}
+
+.gallery-item {
+    list-style: none;
+    flex: 1 1 auto;
+    max-width: calc(33.3333% - 20px); /* アイテムの最大幅を調整 */
+}
+
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* カード間のスペースを調整 */
+}
+
+.feature-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+    height: 100%; /* カードの高さを調整 */
+}
+
+.feature-card-image-container {
+    flex: 1 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.feature-card-image-container img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    max-height: 300px; /* 画像の最大高さを設定 */
+}
+
+.feature-card-content {
+    padding: 16px;
+}
+
+.feature-card-copy {
+    margin-bottom: 12px;
+}
+
+.typography-feature-card-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0071e3;
+}
+
+.typography-card-headline {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #000;
+}
+
+.card-cta-modal-button {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #0071e3;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-cta-modal-button:hover {
+    background-color: #005aa7;
+}
+
+
+
+
+
+
+
+
+
+
+/* メンバーシップ情報ページ */
+.membership {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.membership h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.membership p {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.membership ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.membership ul li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.membership ul ul {
+    margin-top: 20px;
+}
+
+.membership ul ul li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.membership ul ul li:first-child {
+    font-weight: bold;
+}
+
+.membership ul ul li:nth-child(odd) {
+    background-color: #f9f9f9;
+    padding: 5px;
+}
+
+.membership ul ul li:nth-child(even) {
+    background-color: #e9e9e9;
+    padding: 5px;
+}
