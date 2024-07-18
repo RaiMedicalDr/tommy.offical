@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャット - トミーおばちゃん公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .chat-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .chat-header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .chat-box {
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e1e1e1;
+        }
+        .message.user {
+            background-color: #d1ffd1;
+        }
+        .chat-input {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-input textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-input button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="brand">
+                <h5>トミーおばちゃん公式サイト</h5>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="index.html">お問い合わせ</a></li>
+                    <li><a href="チャット.html">チャット</a></li>
+                    <li><a href="4044444.html">ブログ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>チャットで質問</h2>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- チャットメッセージがここに表示されます -->
+        </div>
+        <div class="chat-input">
+            <textarea id="chat-message" placeholder="質問を入力してください..."></textarea>
+            <button onclick="sendMessage()">送信</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 トミーおばちゃん公式サイト. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            var chatBox = document.getElementById('chat-box');
+            var message = document.getElementById('chat-message').value;
+
+            if (message.trim() !== "") {
+                var userMessage = document.createElement('div');
+                userMessage.classList.add('message', 'user');
+                userMessage.textContent = message;
+                chatBox.appendChild(userMessage);
+
+                document.getElementById('chat-message').value = '';
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // ここにサーバーとの通信コードを追加し、サーバーからの応答を表示する。
+                // 例:
+                // fetch('server-endpoint', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ message: message })
+                // })
+                // .then(response => response.json())
+                // .then(data => {
+                //     var serverMessage = document.createElement('div');
+                //     serverMessage.classList.add('message');
+                //     serverMessage.textContent = data.reply;
+                //     chatBox.appendChild(serverMessage);
+                //     chatBox.scrollTop = chatBox.scrollHeight;
+                // });
+            }
+        }
+    </script>
+
+</body>
+</html>
